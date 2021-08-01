@@ -59,16 +59,14 @@ public class 选择排序算法 {
         for (int i = 0; i < arr.length - 1; i++) {
             int minIndex = i;//假设最小值的下标是i
             int minData = arr[i];
-            boolean flag = false;
             for (int j = i+1; j < arr.length; j++) {
                 if(arr[minIndex]>arr[j]){
                     minIndex = j;
                     minData = arr[j];
-                    flag = true;
                 }
             }
             //防止没有发生实际排序的情况，可提升性能
-            if(flag){
+            if(minIndex!=i){
                 arr[minIndex] = arr[i];
                 arr[i] = minData;
             }
